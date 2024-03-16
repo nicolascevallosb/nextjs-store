@@ -10,6 +10,6 @@ export default function Category(props: CategoryProps) {
     } = props.params
 
     return(
-        <h1>{category}</h1>
+        <h1>Store: {category}</h1>
     );
 }
