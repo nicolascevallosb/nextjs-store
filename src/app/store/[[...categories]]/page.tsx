@@ -10,7 +10,6 @@ export default function Category(props: CategoryProps) {
         categories,
     } = props.params
 
-    console.log(categories);
     return(
         <h1>Store: {categories}</h1>
     );
