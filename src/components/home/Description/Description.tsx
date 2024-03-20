@@ -38,8 +38,8 @@ export const Description = () => {
                 </div>
             </button>
             <div className={styles.description_text}>
-                <h2>Description</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor optio debitis quod perspiciatis possimus facere modi, praesentium enim autem velit! Incidunt deserunt explicabo accusamus soluta placeat sequi a quisquam provident.</p>
+                <h2>Bring the Future Today!</h2>
+                <p><strong>Maxi Emporium:</strong> Your Gateway to Tomorrow's Tech! Dive into a world of cutting-edge gadgets and gear. Stay ahead of the curve and redefine your digital lifestyle with us.</p>
             </div>
         </section>
     );
