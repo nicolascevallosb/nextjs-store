@@ -1,9 +1,10 @@
 import React from "react";
+import styles from "./Footer.module.sass";
 
 export const Footer = () => {
     return(
-        <footer>
-            <p>Maxi Emporium</p>
+        <footer className={styles.footer}>
+            <h1>Maxi Emporium</h1>
         </footer>
     );
 }
