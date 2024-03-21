@@ -23,3 +23,19 @@ export const getCollections = async () => {
                 
     }
 }
+
+export const getCollectionProducts = async (id: string) => {
+    try {
+        const response = await fetch(ShopifyUrls.collections.products(id), {
+            headers: new Headers({
+                'X-Shopify-Access-Token': env.SHOPIFY_TOKEN
+            })
+        });
+        const {products} = await response.json();
+        return products;
+
+    } catch (error) {
+        console.log(error);
+        
+    }
+}

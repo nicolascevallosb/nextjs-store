@@ -1,4 +1,5 @@
 import { ProductsWrapper } from "app/components/store/ProductsWrapper";
+import { getCollections, getCollectionProducts } from "app/services/shopify/collections";
 import { getProducts } from "app/services/shopify/products";
 
 interface CategoryProps {
@@ -9,8 +10,16 @@ interface CategoryProps {
 }
 
 export default async function Category(props: CategoryProps) {
-    const products = await getProducts();
     const { categories } = props.params;
+    let products = [];
+    const collections = await getCollections();
+    
+    if(categories?.length > 0){
+        const selectedCollectionId = collections.find((collection: Collection) => collection.handle === categories[0]).id;
+        products = await getCollectionProducts(selectedCollectionId);
+    } else {
+        products = await getProducts();
+    }
 
     return(
         <ProductsWrapper products={products} />
