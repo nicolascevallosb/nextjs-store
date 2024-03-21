@@ -11,7 +11,6 @@ export const Description = () => {
 
     const handleCLick = () => {
         setHasBorder(!hasBorder);
-        console.log(hasBorder);
     };
 
     const context = classNames.bind(styles);
