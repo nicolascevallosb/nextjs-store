@@ -1,16 +1,23 @@
 "use client";
 import { useState } from "react";
 import styles from "./NewAccountForm.module.sass";
+import { handleCreateUser } from "app/actions";
 
 export const NewAccountForm = () => {
 
     const [errors, setErrors] = useState<string[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        handleCreateUser(formData);
+    }
+
     return (
         <div className={styles.new_account_form}  >
             <h1 className={styles.new_account_form_title}>New Account</h1>
-            <form className={styles.new_account_form_form}>
+            <form className={styles.new_account_form_form} onSubmit={handleSubmit}>
                 <input type="text" name="first_name" placeholder="Name" disabled={loading} />
                 <input type="text" name="last_name" placeholder="Lastname" disabled={loading} />
                 <input type="text" name="email" placeholder="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" disabled={loading} />
